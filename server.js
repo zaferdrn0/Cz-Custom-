@@ -11,9 +11,14 @@ const serviceAccount = require('./cz-custom-firebase-adminsdk-t3g7q-073c9dce51.j
 
 app.use(express.static("public"));
 
+
+
+app.post("/register", (req, res) => {
+  console.log(req.body); 
+});
+
+
 app.listen(port,function (){
-  
-  
   
     console.log("sunucu calısıyor...")
 });
@@ -38,8 +43,3 @@ snapshot.forEach((doc) => {
   console.log(doc.id, '=>', doc.data());
 });}*/
 
-
-
-app.post("/register", (req, res) => {
-  console.log(req.body); 
-});
