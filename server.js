@@ -1,4 +1,5 @@
 const express = require("express");
+const admin = require('firebase-admin');
 const {
   initializeApp,
   applicationDefault,
@@ -12,7 +13,7 @@ const {
 const app = express();
 var path = require("path");
 const port = 3000;
-const serviceAccount = require("./cz-custom-firebase-adminsdk-t3g7q-073c9dce51.json");
+const serviceAccount = require("/cz-custom-firebase-adminsdk-t3g7q-073c9dce51.json");
 
 app.use(express.static("public"));
 app.use(require("body-parser").json()); // tamamadır. bu satın çözdü sorunu. otomatik olarak express gelen fetch isteğini normal string olarak almaya
@@ -56,10 +57,7 @@ app.post("/register", async (req, res) => {
 });
 
 app.post("/loginn", async (req, res) => {
-  console.log(req.body);
-  let username = req.body.username;
   let email = req.body.email;
-  console.log(email);
   let password = req.body.password;
 
     if(password === await girisSifreGetir(email)){
@@ -68,11 +66,10 @@ app.post("/loginn", async (req, res) => {
   } else {
     console.log(' sifre yanlıs');
       res.status(400).send({ hata: "hata olustu" });
-    }
+    }});
 
-  
 
-    });
+
 app.listen(port, function () {
   console.log("sunucu calısıyor...");
 });
