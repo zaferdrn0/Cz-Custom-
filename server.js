@@ -1,5 +1,6 @@
 const express = require("express");
 const admin = require('firebase-admin');
+var session = require('express-session')
 const {
   initializeApp,
   applicationDefault,
@@ -13,11 +14,10 @@ const {
 const app = express();
 var path = require("path");
 const port = 3000;
-const serviceAccount = require("/cz-custom-firebase-adminsdk-t3g7q-073c9dce51.json");
+const serviceAccount = require("./cz-custom-firebase-adminsdk-t3g7q-073c9dce51.json");
 
 app.use(express.static("public"));
-app.use(require("body-parser").json()); // tamamadır. bu satın çözdü sorunu. otomatik olarak express gelen fetch isteğini normal string olarak almaya
-// çalışıyordu sanırım. şimdi gelen req.body'i json olarak alıyor. tamam şidmi şey yapmcam eger kayıt ederse giriş sayfasına atsın req.sen
+app.use(require("body-parser").json()); 
 
 initializeApp({
   credential: cert(serviceAccount),
