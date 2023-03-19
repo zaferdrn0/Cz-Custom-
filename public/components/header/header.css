@@ -1,0 +1,91 @@
+.header {
+    display: inline-block;
+    height: 70px;
+    background: #141618;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: block;
+  }
+  .header .container {
+    display: flex;
+  }
+  .header .container .header-left {
+    display: flex;
+    align-items: center;
+  }
+  .header .container .header-left a {
+    line-height: 70px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+    transition: 200ms;
+  }
+  .header .container .header-left a:hover {
+    color: #fff;
+  }
+  
+  .header .container .header-left a i {
+    padding-right: 5px;
+  }
+  .header .container .header-left a img {
+    height: 30px;
+    line-height: 50px;
+    padding-top: 13px;
+    margin-right: 40px;
+  }
+  
+  .header .container .header-right {
+    align-items: center;
+    display: flex;
+  }
+  
+  .header .container .header-right input {
+    width: 280px;
+    height: 30px;
+    background: #21252d;
+    border-radius: 4px 0 0 4px;
+    border: none;
+    color: #fff;
+    border: 1px solid #21252d;
+  }
+  
+  .header .container .header-right a.search {
+    height: 30px;
+    width: 30px;
+    background: #21252d;
+    text-align: center;
+    border: 1px solid #21252d;
+    border-radius: 0 4px 4px 0;
+    transition: 400ms;
+    margin-right: 20px;
+  }
+  .header .container .header-right a.search:hover {
+    background: #316aff;
+  }
+  .header .container .header-right a.search i {
+    padding-top: 6px;
+    color: white;
+  }
+  .header .container .header-right a.hamburger i {
+    color: white;
+    margin-right: 15px;
+  }
+  .header .container .header-right ul {
+    display: flex;
+  }
+  .header .container .header-right ul li a {
+    height: 31px;
+    display: flex;
+    align-items: center;
+    list-style: 31px;
+    padding: 0 15px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+  }
+  .header .container .header-right ul li a.join {
+    background: #36855b;
+    border-radius: 4px;
+  }
+  .header .container .header-right ul li a:hover {
+    color: #fff;
+  }
