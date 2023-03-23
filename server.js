@@ -217,6 +217,8 @@ app.post("/product", (req,res) =>{
         productArr.push(prod);
       })
       res.send(productArr);
+    
+     
   })
   .catch((error) => {
     console.log(error);

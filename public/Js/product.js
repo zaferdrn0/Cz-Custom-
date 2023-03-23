@@ -2,7 +2,26 @@ const productCard = document.getElementsByClassName("product-card");
 const productTitle = document.getElementsByClassName("product-title");
 const productDescription = document.getElementsByClassName("product-description");
 const productPrice = document.getElementsByClassName("prodcut-price");
-const productList = document.getElementsByClassName("product-list")
+const productList = document.getElementsByClassName("product-list")[0]
+ // olmaz, öyle bi fonksiyon yok. çünkü id, tek bir elemana özeldir
+ // sınıf ise birden fazla olabilir. tamma şimdi verileri nasıl yazdırıcaz hepsine aynı veri gidi
+
+
+
+
+
+let links = document.getElementById("myLinks");
+
+function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  };
+
+
 
 
 fetch("/product", {
@@ -15,15 +34,71 @@ fetch("/product", {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-      for(var i=0; i<data.length; i++) {
-        const clonedDiv = productCard[i].cloneNode(true);
-        clonedDiv.id = `product-card-${i}`;
-        document.body.appendChild(clonedDiv);
+      if(data.length === 0){
+        alert("Urun bulunmamaktadır.")
+      }
+      else{
+        for(var i=0; i<data.length; i++) {
+          console.log(data[i])
+          /*
+          const clonedDiv = productCard[i].cloneNode(true);
+          clonedDiv.id = `product-card-${i}`;
+          productList.appendChild(clonedDiv); */
+          // clone divi siktir et.
+          let myDiv = document.createElement('div');
+          myDiv.className = "product-card";
+  
+          let myImageDiv = document.createElement('div');
+          myImageDiv.className ="product-image-div";
+          myDiv.appendChild(myImageDiv);
 
+          let myImage = document.createElement('img');
+          myImage.className ="product-image";
+          myImage.src ="/images/"+data[i].image;
+          myImageDiv.appendChild(myImage);
+          
+
+          let myDetail = document.createElement("div");
+          myDetail.className = "product-details";
+          myDiv.appendChild(myDetail);
+  
+          let myh2 = document.createElement('h2');
+          myh2.className ="product-title";
+          const myh2_text = document.createTextNode(data[i].name);
+          myh2.appendChild(myh2_text);
+          myDetail.appendChild(myh2);
+  
+          let myP = document.createElement('p');
+          myP.className ="product-description";
+          const myP_text = document.createTextNode(data[i].description);
+          myP.appendChild(myP_text);
+          myDetail.appendChild(myP);
+        
+          let myPrice = document.createElement('p');
+          myPrice.className ="product-price";
+          const myPrice_text = document.createTextNode(data[i].price + "$");
+          myPrice.appendChild(myPrice_text);
+          myDetail.appendChild(myPrice);
+
+          let myButton = document.createElement('button')
+          myButton.className = "product-btn";
+          const myButton_text = document.createTextNode("ADD to Cart")
+          myButton.appendChild(myButton_text);
+          myDetail.appendChild(myButton);
         
 
-      } 
+          productList.appendChild(myDiv);
+  
+          // şimdi bak, üstte benim yaptığım gibi html ementleri oluşturup,
+          // değerlerini verip öyle ekleyebilrsin
+          // ya da, direkt senin yaptığın gibi html'de görünmez bir div oluşturursun
+          // onu clone'larsın sonra değerlerini değiştirirsin.
+          // nasıl kolayına gelirse o şekilde yaparsın. clone olmaz ddedin ya
+          // olmaz demedim, olur. ama tahminimce daha zor olurdu ama şimdi yapınca belki daha kolay olur bilmiyom, hangisini tercih edersen ona göre yaparsın. tamam  zekiş tamm var mı başka bişiy şu anlık yok tamamdır ben kaçıyom see ya later ok by by
+  
+        } 
+      }
+      
     })
     .catch((error) => {
       console.error("Error:", error);

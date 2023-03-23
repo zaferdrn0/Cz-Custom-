@@ -916,6 +916,11 @@ body {
     margin-top: 30px !important;
   }
 }
+@media screen and (min-width: 700px) {
+  .footer{
+    position:fixed;
+  }
+}
 @media screen and (max-width: 375px) {
   .footer .container-3 .right .search input {
     width: 185px !important;
@@ -923,6 +928,9 @@ body {
 }
 .footer {
   background-color: #141618;
+ 
+  width: 100%;
+  bottom: 0;
 }
 .footer .container-3 {
   display: flex;
