@@ -267,6 +267,10 @@
 
 .product-description {
 	margin-bottom: 20px;
+  height: 54px;
+  
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .product-price {
@@ -274,8 +278,16 @@
 
 	font-size: 1.2rem;
 }
-
-.product-card .product-details .product-btn{
+.product-card .product-details #productBtn-0,
+.product-card .product-details #productBtn-1,
+.product-card .product-details #productBtn-2,
+.product-card .product-details #productBtn-3,
+.product-card .product-details #productBtn-4,
+.product-card .product-details #productBtn-5,
+.product-card .product-details #productBtn-6,
+.product-card .product-details #productBtn-7,
+.product-card .product-details #productBtn-8,
+.product-card .product-details #productBtn-9{
   margin-left: 150px;
   width: 110px;
   height: 28px;

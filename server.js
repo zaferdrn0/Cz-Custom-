@@ -226,7 +226,34 @@ app.post("/product", (req,res) =>{
 })
 
 
+app.get('/productCheck', async (req, res )=> {
+  if (!req.session.Users) {
+    return res.send(JSON.stringify({
+      message: "giris yapınız",
+      yonlendir:"/login"
+    }))
+  }
+  
+  console.log(req.session.Users);
+    //let toReturn = {...req.session.user};
+    return res.send(JSON.stringify({
+      kullaniciAdi: req.session.Users.username,
+      message: "Sepete eklendi",
+      
+    }));
+});
 
+app.post('/cikisYapp', async (req, res) =>{
+  req.session.destroy(err => {
+    if (err) {
+        console.log("hatali");
+    }
+    res.clearCookie('connect.sid');
+    console.log('calisti')
+    return res.send(JSON.stringify({yonlendir: "/"}));
+});});
+
+ 
 
 app.listen(port, () => {
   console.log(` Server Çalışıyor , ${port}`);
