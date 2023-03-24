@@ -1,14 +1,27 @@
 let links = document.getElementById("myLinks");
 let cikisYap = document.getElementById("cikisYap");
+let userMenu = document.getElementById("user-menu")
 
 function myFunction() {
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "block";
-    }
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
   };
+
+  function myFunctionUser(){
+    var y = document.getElementById("user-menu");
+    if (y.style.display === "block") {
+      y.style.display = "none";
+    } else {
+      y.style.display = "block";
+    }
+
+  }
+ 
+  
 
   function cikisYapp(){
     

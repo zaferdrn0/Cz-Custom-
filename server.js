@@ -226,22 +226,32 @@ app.post("/product", (req,res) =>{
 })
 
 
-app.get('/productCheck', async (req, res )=> {
+app.post('/productCheck', async (req, res )=> {
   if (!req.session.Users) {
     return res.send(JSON.stringify({
       message: "giris yapınız",
       yonlendir:"/login"
     }))
   }
-  
-  console.log(req.session.Users);
-    //let toReturn = {...req.session.user};
-    return res.send(JSON.stringify({
-      kullaniciAdi: req.session.Users.username,
-      message: "Sepete eklendi",
-      
-    }));
+    
+      console.log(req.session.Users);
+      let productId = req.body.id;
+      let email = req.session.Users.email;
+      let user = await Users.findOne({ email: email});
+      user.cart.push(productId);
+      user.save();
+
+      return res.send(JSON.stringify({
+        kullaniciAdi: req.session.Users.username,
+        message: "Sepete eklendi",
+        
+      }));
+    
+
+
 });
+
+
 
 app.post('/cikisYapp', async (req, res) =>{
   req.session.destroy(err => {

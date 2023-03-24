@@ -89,11 +89,9 @@ fetch("/product", {
           productList.appendChild(myDiv);
         
           
-          document.getElementById(`productBtn-${i}`).addEventListener("click", benimFonksiyonum);
+          var buttons =   document.getElementById(`productBtn-${i}`).addEventListener("click", handleClick);
       
-        
-
-          
+     
   
           // şimdi bak, üstte benim yaptığım gibi html ementleri oluşturup,
           // değerlerini verip öyle ekleyebilrsin
@@ -105,6 +103,41 @@ fetch("/product", {
         } 
         
       }
+
+      function handleClick(event){
+        let buttonArr = [];
+     
+        let buttonId = event.target.id
+        buttonArr.push(buttonId.split("-")) 
+        let productId = buttonArr[0][1];
+        console.log(data[productId]._id)
+         
+          fetch("/productCheck",{
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body:JSON.stringify({
+              id: data[productId]._id,
+            })
+          })
+          .then((response) => response.json())
+          .then((data) => {
+            if(data.yonlendir != undefined) window.location.replace(data.yonlendir);
+            console.log(data);
+            let message = JSON.stringify(data, ['message'])
+            const mes = message.split(".");
+            let word = mes[0];
+            alert(word);
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+        }
+        
+
+
+
       
     })
     .catch((error) => {
@@ -112,19 +145,4 @@ fetch("/product", {
     });
   
 
-    function benimFonksiyonum(){
-     
-      fetch("/productCheck")
-      .then((response) => response.json())
-      .then((data) => {
-        if(data.yonlendir != undefined) window.location.replace(data.yonlendir);
-        console.log(data);
-        let message = JSON.stringify(data, ['message'])
-        const mes = message.split(".");
-        let word = mes[0];
-        alert(word);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-    }
+   

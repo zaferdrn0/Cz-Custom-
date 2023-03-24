@@ -22,6 +22,25 @@ color:white;
   font-size:19px ;
   
 }
+#user-menu{
+ right: 0;
+  z-index: 5;
+  margin-right: 6%;
+  display: none;
+  position: absolute;
+}
+#myUser{
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  background-color: #8393b3;
+  text-align: center;
+}
+#myUser a{
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
 .test123:focus-visible {
   outline: none;
 }
@@ -90,14 +109,14 @@ body {
 }
 
 /* Header Responsve */
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1070px) {
   .header .container .header-right a.search,
   .header .container .header-right input {
     display: none;
   }
 }
 
-@media screen and (max-width: 615px) {
+@media screen and (max-width: 640px) {
   .header .container .header-left a.learn {
     display: none;
   }
@@ -200,11 +219,16 @@ body {
   padding: 0 15px;
   color: rgba(255, 255, 255, 0.75);
   font-size: 13px;
+  margin-left: 15px;
 }
 .header .container .header-right ul li a.join {
   background: #36855b;
   border-radius: 4px;
 }
+.header .container .header-right ul li a.hamburger-User{
+  font-size: 25px;
+}
+
 .header .container .header-right ul li a:hover {
   color: #fff;
 }
