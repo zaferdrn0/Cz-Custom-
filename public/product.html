@@ -20,7 +20,7 @@
     <header class="header">
       <div class="container">
         <div class="header-left">
-          <a href="#"><img src="images/logo.png" /></a>
+          <a href="/"><img src="images/logo.png" /></a>
           
           <a class="learn" href="#">
             <i class="fa-solid fa-gun"></i>
@@ -34,10 +34,20 @@
           </a>
           <ul>
             <li>
-              <a class="join" href="login"> Buy Now </a>
+              <a class="join" href="product"> Buy Now </a>
+            </li>
+           
+            <li>
+              <a id="user-panel"
+              onclick="myFunctionUser()"
+              class="hamburger-User"
+              href="javascript:void(0);"
+            >
+            <i class="fa-regular fa-user"></i></a>
+            
             </li>
             <li>
-              <a href="login">Cart</a>
+              <a id="login-user" href="login">Login</a>
             </li>
           </ul>
 
@@ -51,8 +61,18 @@
         </div>
       </div>
     </header>
+    <div id="user-menu">
+      <div id="myUser">
+        <a id="user-link" href="#">User</a>
+        <a id="cart-link" href="cart">Cart</a>
+        <a id="admin-product-add" href="productadd">Product Add</a>
+        <a id="cikisYap-user" href="#"><button id="cikisYap" class="btn" onclick="cikisYapp()">cıkıs</button></a>
+        
+      </div>
+    </div>
+   
     <div id="myLinks">
-        <a href="login">Buy</a>
+        <a href="product">Buy</a>
         <a href="register">Cart</a>
         <a href="#">Learn</a>
       </div>

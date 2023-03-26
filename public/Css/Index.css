@@ -4,6 +4,15 @@
   list-style: none;
   text-decoration: none;
 }
+
+#admin-product-add{
+  display: none;
+}
+
+#user-panel{
+  display: none;
+}
+
 #myLinks{
     display: none;
 }
