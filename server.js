@@ -262,6 +262,7 @@ app.post("/cart", async (req, res) => {
     for (let i = 0; i < cartArr.length; i++) {
       let product = await Products.findOne({ _id: cartItems[i].id });
       let data = JSON.stringify({
+        id: product._id,
         name: product.name,
         image: product.image,
         price: product.price,

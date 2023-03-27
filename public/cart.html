@@ -1,156 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Anna De Armas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+   <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./Css/cart.css">
-</head>
-<body>
+  </head>
+  <body>
+
     <header class="header">
-        <div class="container">
-          <div class="header-left">
-            <a href="/"><img src="images/logo.png" /></a>
-            
-            <a class="learn" href="#">
-              <i class="fa-solid fa-gun"></i>
-              Learn to Use Shutguns
-            </a>
-          </div>
-          <div class="header-right">
-            <input class="test123" type="text" placeholder="  Search" />
-            <a class="search" href="#">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
-            <ul>
-              <li>
-                <a class="join" href="product"> Buy Now </a>
-              </li>
-             
-              <li>
-                <a id="user-panel"
-                onclick="myFunctionUser()"
-                class="hamburger-User"
-                href="javascript:void(0);"
-              >
-              <i class="fa-regular fa-user"></i></a>
-              
-              </li>
-              <li>
-                <a id="login-user" href="login">Login</a>
-              </li>
-            </ul>
-  
-            <a
-              onclick="myFunction()"
-              class="hamburger"
+      <div class="container">
+        <div class="header-left">
+          <a href="/"><img src="images/logo.png" /></a>
+          
+          <a class="learn" href="#">
+            <i class="fa-solid fa-gun"></i>
+            Learn to Use Shutguns
+          </a>
+        </div>
+        <div class="header-right">
+          <input class="test123" type="text" placeholder="  Search" />
+          <a class="search" href="#">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+          <ul>
+            <li>
+              <a class="join" href="product"> Buy Now </a>
+            </li>
+           
+            <li>
+              <a id="user-panel"
+              onclick="myFunctionUser()"
+              class="hamburger-User"
               href="javascript:void(0);"
             >
-              <i class="fa-sharp fa-solid fa-bars"></i
-            ></a>
-          </div>
-        </div>
-      </header>
-      <div id="user-menu">
-        <div id="myUser">
-          <a id="user-link" href="#">User</a>
-          <a id="cart-link" href="#">Cart</a>
-          <a id="admin-product-add" href="productadd">Product Add</a>
-          <a id="cikisYap-user" href="#"><button id="cikisYap" class="btn" onclick="cikisYapp()">cıkıs</button></a>
-          
+            <i class="fa-regular fa-user"></i></a>
+            
+            </li>
+            <li>
+              <a id="login-user" href="login">Login</a>
+            </li>
+          </ul>
+
+          <a
+            onclick="myFunction()"
+            class="hamburger"
+            href="javascript:void(0);"
+          >
+            <i class="fa-sharp fa-solid fa-bars"></i
+          ></a>
         </div>
       </div>
-     
-      <div id="myLinks">
-          <a href="product">Buy</a>
-          <a href="register">Cart</a>
-          <a href="#">Learn</a>
+    </header>
+    <div id="user-menu">
+      <div id="myUser">
+        <a id="user-link" href="#">User</a>
+        <a id="cart-link" href="cart">Cart</a>
+        <a id="admin-product-add" href="productadd">Product Add</a>
+        <a id="cikisYap-user" href="#"><button id="cikisYap" class="btn" onclick="cikisYapp()">cıkıs</button></a>
+        
+      </div>
+    </div>
+   
+    <div id="myLinks">
+        <a href="product">Buy</a>
+        <a href="register">Cart</a>
+        <a href="#">Learn</a>
+      </div>
+
+
+
+
+
+
+
+
+    
+    <div class="container-4">
+      <h1>Online Alışveriş Sepeti</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Resim</th>
+            <th>Ürün Adı</th>
+            <th>Adet</th>
+            <th>Fiyat</th>
+            <th>Toplam Fiyat</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+      
+      </tbody>
+    </table>
+  </div>
+
+  <footer class="footer">
+    <div class="container-3">
+      <div class="left">
+        <div class="logo">
+          <img src="/images/logo.png" />
         </div>
-  
 
-        <section>
-            <div class="container-2">
-                <div class="cart">
+        <div class="yazi">
+          <div class="content">
+            <h4>CONTENT</h4>
+            <a href=""><h6>Browse</h6></a>
+            <a href=""><h6>Courses</h6></a>
+            <a href=""><h6>Lessons</h6></a>
+            <a href=""><h6>Prodacts</h6></a>
+          </div>
+          <div class="about">
+            <h4>ABOUT</h4>
+            <a href=""><h6>Pricing</h6></a>
+            <a href=""><h6>Instructors</h6></a>
+            <a href=""><h6>Stories</h6></a>
+            <a href=""><h6>Team</h6></a>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div><p>Search for Guns</p></div>
 
-                    <div class="cart-title">
-                        <span class="image"> <h4>RESİM</h4> </span>
-                        <span class="title"> <h4>URUN ADI</h4> </span>
-                        <span class="count"> <h4>ADET</h4> </span>
-                        <span class="price"> <h4>BIRIM FIYAT</h4> </span>
-                        <span class="all-price"> <h4>TUTAR</h4> </span>
-                    </div>
-                    <div class="cart-products">
-                        
-                    </div>
+        <div class="search">
+          <input class="test123" type="text" placeholder="  Search" />
+          <a href="#">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-
-                </div>
-
-
-                <div class="pay">
-
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <footer class="footer">
-            <div class="container-3">
-              <div class="left">
-                <div class="logo">
-                  <img src="/images/logo.png" />
-                </div>
-      
-                <div class="yazi">
-                  <div class="content">
-                    <h4>CONTENT</h4>
-                    <a href=""><h6>Browse</h6></a>
-                    <a href=""><h6>Courses</h6></a>
-                    <a href=""><h6>Lessons</h6></a>
-                    <a href=""><h6>Prodacts</h6></a>
-                  </div>
-                  <div class="about">
-                    <h4>ABOUT</h4>
-                    <a href=""><h6>Pricing</h6></a>
-                    <a href=""><h6>Instructors</h6></a>
-                    <a href=""><h6>Stories</h6></a>
-                    <a href=""><h6>Team</h6></a>
-                  </div>
-                </div>
-              </div>
-              <div class="right">
-                <div><p>Search for Guns</p></div>
-      
-                <div class="search">
-                  <input class="test123" type="text" placeholder="  Search" />
-                  <a href="#">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </footer>
-    <script src="./Js/cart.js"></script>
-</body>
-</html>
+  </body>
+  </html>
+   
+		  <script src="./Js/cart.js"></script>
+		  </body>
+		  </html>

@@ -8,8 +8,9 @@ let cartLink = document.getElementById("cart-link");
 let y = document.getElementById("user-menu");
 let userPanel = document.getElementById("user-panel")
 let adminProductAdd = document.getElementById("admin-product-add")
-const productList = document.getElementsByClassName("cart-products")[0]
+const productList = document.getElementById("table-body")
 
+var dataId 
 
 function myFunction() {
   var x = document.getElementById("myLinks");
@@ -114,64 +115,75 @@ fetch("/cart",{
   
     for(var i=0; i<data.length; i++) {
       console.log(data[i]);
+      dataId = data[i].id;
 
-      let myDiv = document.createElement("div");
-      myDiv.className = "products-list";
-      productList.appendChild(myDiv)
+      let mytr = document.createElement("tr");
+      productList.appendChild(mytr)
 
-      let myImageDiv = document.createElement('div')
-      myImageDiv.className = "image-div";
-      myDiv.appendChild(myImageDiv)
+      let myImageTd = document.createElement("td");
+      mytr.appendChild(myImageTd);
 
-      let myImage = document.createElement('img')
-      myImage.className = "image";
+      let myImage = document.createElement("img");
       myImage.src = "/images/"+data[i].image;
-      myImageDiv.appendChild(myImage)
+      myImageTd.appendChild(myImage);
 
-      let myh2Div = document.createElement('div');
-          myh2Div.className ="title-div";
-          myDiv.appendChild(myh2Div);
+      
+      let myTitleTd = document.createElement("td")
+      const myTitleTd_text = document.createTextNode(data[i].name);
+      myTitleTd.appendChild(myTitleTd_text);
+      mytr.appendChild(myTitleTd);
 
-          let myh2 = document.createElement('h2');
-          myh2.className ="title";
-          const myh2_text = document.createTextNode(data[i].name);
-          myh2.appendChild(myh2_text);
-          myh2Div.appendChild(myh2);
+      let myInputTd = document.createElement("td");
+      mytr.appendChild(myInputTd);
 
-          let myCountDiv = document.createElement("div");
-          myCountDiv.className = "count-div";
-          myDiv.appendChild(myCountDiv);
+      let myInput = document.createElement("input");
+      myInput.type = "number";
+      myInput.min = "1";
+      myInput.value = data[i].adet;
+      myInputTd.appendChild(myInput);
 
-          let myCount = document.createElement("input")
-          myCount.type ="text";
-          myCount.name ="quantity[15085]";
-          myCount.size ="1";
-          myCount.value = data[i].adet;
-          myCountDiv.appendChild(myCount);
+      let myPriceTd = document.createElement("td");
+      const myPriceTd_text = document.createTextNode(data[i].price + "$")
+      myPriceTd.appendChild(myPriceTd_text);
+      mytr.appendChild(myPriceTd);
 
+      let myAllPriceTd = document.createElement("td");
+      const myAllPriceTd_Text = document.createTextNode(myInput.value *data[i].price + "$")
+      myAllPriceTd.appendChild(myAllPriceTd_Text);
+      mytr.appendChild(myAllPriceTd);
 
-          let myPriceDiv = document.createElement('div');
-          myPriceDiv.className ="price-div";
-          myDiv.appendChild(myPriceDiv);
+      let myDeleteTd = document.createElement("td");
+      mytr.appendChild(myDeleteTd);
 
-          let myPrice = document.createElement('p');
-          myPrice.className ="price";
-          const myPrice_text = document.createTextNode(data[i].price + "$");
-          myPrice.appendChild(myPrice_text);
-          myPriceDiv.appendChild(myPrice);
+      let myDeleteIcone = document.createElement("i")
+      myDeleteIcone.className = "fa-solid fa-trash";
+     myDeleteIcone.style.cursor ="pointer"
+      myDeleteIcone.onclick = function() {
+        
+      var myListData = localStorage.getItem("cartItems");
+        
 
-          let myTutarDiv = document.createElement('div');
-          myTutarDiv.className ="all-price-div";
-          myDiv.appendChild(myTutarDiv);
+      var myListArray = myListData.split(",");
+        console.log(dataId)
 
-          let myTutar = document.createElement('p');
-          myTutar.className ="all-price";
-          const myTutar_text = document.createTextNode(data[i].adet *data[i].price + "$" );
-          myTutar.appendChild(myTutar_text);
-          myTutarDiv.appendChild(myTutar);
-    }
+      var index = myListArray.indexOf(dataId);
+
+      if(index >= 0) {
+          myListArray.splice(index, 1);
+           var updatedList = myListArray.join(",");
+           localStorage.setItem("cartItems", updatedList);
+            }
+          };
+      myDeleteTd.appendChild(myDeleteIcone)
+
+     
+        
+      
+    } 
 
   })
   .catch((error) => {
     console.error("Error:", error);
   }); 
+
+
