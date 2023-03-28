@@ -223,42 +223,11 @@ app.post("/product", (req, res) => {
     });
 });
 
-/*
-app.post('/productCheck', async (req, res )=> {
-  
-   if (!req.session.Users) {
-    return res.send(JSON.stringify({
-      message: "giris yapınız",
-      yonlendir:"/login"
-    }))
-  }
-
-    else{
-      console.log(req.session.Users);
-      let productId = req.body.id;
-      let email = req.session.Users.email;
-      let user = await Users.findOne({ email: email});
-      user.cart.push(productId);
-      user.save();
-
-      return res.send(JSON.stringify({
-        kullaniciAdi: req.session.Users.username,
-        message: "Sepete eklendi",
-        
-      }));
-    } 
-       
-    
-
-
-});
-*/
-
 app.post("/cart", async (req, res) => {
   var array = [];
   var cartItems = req.body.cartItems;
   var cartArr = cartItems;
-  try{
+  try {
     for (let i = 0; i < cartArr.length; i++) {
       let product = await Products.findOne({ _id: cartItems[i].id });
       let data = JSON.stringify({
@@ -272,11 +241,7 @@ app.post("/cart", async (req, res) => {
       array.push(veri);
     }
     res.send(array);
-  }
-  catch{
-    
-  }
- 
+  } catch {}
 });
 
 app.post("/loginCheck", (req, res) => {

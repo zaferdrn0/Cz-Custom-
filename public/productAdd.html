@@ -19,7 +19,7 @@
       <div class="container">
         <div class="header-left">
           <a href="/"><img src="images/logo.png" /></a>
-          
+
           <a class="learn" href="#">
             <i class="fa-solid fa-gun"></i>
             Learn to Use Shutguns
@@ -34,15 +34,16 @@
             <li>
               <a class="join" href="product"> Buy Now </a>
             </li>
-           
+
             <li>
-              <a id="user-panel"
-              onclick="myFunctionUser()"
-              class="hamburger-User"
-              href="javascript:void(0);"
-            >
-            <i class="fa-regular fa-user"></i></a>
-            
+              <a
+                id="user-panel"
+                onclick="myFunctionUser()"
+                class="hamburger-User"
+                href="javascript:void(0);"
+              >
+                <i class="fa-regular fa-user"></i
+              ></a>
             </li>
             <li>
               <a id="login-user" href="login">Login</a>
@@ -64,68 +65,73 @@
         <a id="user-link" href="#">User</a>
         <a id="cart-link" href="cart">Cart</a>
         <a id="admin-product-add" href="productadd">Product Add</a>
-        <a id="cikisYap-user" href="#"><button id="cikisYap" class="btn" onclick="cikisYapp()">cıkıs</button></a>
-        
+        <a id="cikisYap-user" href="#"
+          ><button id="cikisYap" class="btn" onclick="cikisYapp()">
+            cıkıs
+          </button></a
+        >
       </div>
     </div>
-   
+
     <div id="myLinks">
-        <a href="product">Buy</a>
-        <a href="register">Cart</a>
-        <a href="#">Learn</a>
-      </div>
+      <a href="product">Buy</a>
+      <a href="register">Cart</a>
+      <a href="#">Learn</a>
+    </div>
 
-
-      <section class="productAdd">
-        <div class="container-2">
-          
-          <div class="add">
-            <div class="typeAdd">
-              <h4>Urun Tur Adı</h4>
-              <input placeholder="Tur adı giriniz" id="typeAddInput" type="text">
-              <button onclick="typeAdd()" id="typeAddBtn" class="btn"> Urun tur ekle</button>
-            </div>
-            <div class="title">  
-              <h1>Urun Ekle</h1>
-              <h4>Product Title</h4>
-              <input id="productTitle" placeholder="Writing"  type="text">
-            </div>
-            <div class="label">
-              <h4>Label</h4>
-              <textarea placeholder="Acıklama Giriniz" name="" id="productLabel"></textarea>
-            </div>
-            <div class="imgAdd">
-              <form action="/productAdd">
-                <h4>Image Add</h4>
-                <input id="productImage" name="resim" type="file">
-              </form>
-             
-            </div>
-            <div class="type">
-              <h4>Product Type</h4>
-              <label for="Type"></label>
-              <select name="Tur" id="productType">
-                
-              </select>
-            </div>
-            <div class="price">
-              <h4>Price</h4>
-              <input id="productPrice" type="text" placeholder="Price Writing">
-            </div>
-            <div class="buttons">
-              <button onclick="productAdd()" id="ekle" class="btn">Urun Ekle</button>
-              
-            </div>
-           
-          </div>
+    <section class="productAdd">
+      <div class="container-2">
+        <div class="add">
           <div class="typeAdd">
-            <h4>URUN GUNCELLEME VE SİL GELCEK</h4>
-            
+            <h4>Urun Tur Adı</h4>
+            <input
+              placeholder="Tur adı giriniz"
+              id="typeAddInput"
+              type="text"
+            />
+            <button onclick="typeAdd()" id="typeAddBtn" class="btn">
+              Urun tur ekle
+            </button>
+          </div>
+          <div class="title">
+            <h1>Urun Ekle</h1>
+            <h4>Product Title</h4>
+            <input id="productTitle" placeholder="Writing" type="text" />
+          </div>
+          <div class="label">
+            <h4>Label</h4>
+            <textarea
+              placeholder="Acıklama Giriniz"
+              name=""
+              id="productLabel"
+            ></textarea>
+          </div>
+          <div class="imgAdd">
+            <form action="/productAdd">
+              <h4>Image Add</h4>
+              <input id="productImage" name="resim" type="file" />
+            </form>
+          </div>
+          <div class="type">
+            <h4>Product Type</h4>
+            <label for="Type"></label>
+            <select name="Tur" id="productType"></select>
+          </div>
+          <div class="price">
+            <h4>Price</h4>
+            <input id="productPrice" type="text" placeholder="Price Writing" />
+          </div>
+          <div class="buttons">
+            <button onclick="productAdd()" id="ekle" class="btn">
+              Urun Ekle
+            </button>
           </div>
         </div>
-      </section>
-
-
+        <div class="typeAdd">
+          <h4>URUN GUNCELLEME VE SİL GELCEK</h4>
+        </div>
+      </div>
+    </section>
 
     <footer class="footer">
       <div class="container-3">

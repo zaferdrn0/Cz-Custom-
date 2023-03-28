@@ -5,40 +5,39 @@
   text-decoration: none;
 }
 
-#admin-product-add{
+#admin-product-add {
   display: none;
 }
 
-#user-panel{
+#user-panel {
   display: none;
 }
 
-#myLinks{
-    display: none;
+#myLinks {
+  display: none;
 }
-#myLinks a{
-color:white;
+#myLinks a {
+  color: white;
   display: flex;
   flex-direction: column;
   right: 0;
   top: 0;
   z-index: 10;
   background-color: #181e28;
-  padding-bottom:5px ;
+  padding-bottom: 5px;
   padding-top: 5px;
   padding-left: 10px;
   border: 1px solid #212a39;
-  font-size:19px ;
-  
+  font-size: 19px;
 }
-#user-menu{
- right: 0;
+#user-menu {
+  right: 0;
   z-index: 5;
   margin-right: 6%;
   display: none;
   position: absolute;
 }
-#myUser{
+#myUser {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -46,7 +45,7 @@ color:white;
   background-color: #8393b3;
   text-align: center;
 }
-#myUser a{
+#myUser a {
   padding-bottom: 15px;
   padding-top: 15px;
 }
@@ -235,7 +234,7 @@ body {
   background: #36855b;
   border-radius: 4px;
 }
-.header .container .header-right ul li a.hamburger-User{
+.header .container .header-right ul li a.hamburger-User {
   font-size: 25px;
 }
 
@@ -243,50 +242,48 @@ body {
   color: #fff;
 }
 
-.add h4{
+.add h4 {
   padding-left: 4px;
 }
 
-.add input{
+.add input {
   padding: 0 10px;
 }
-.add .title{
+.add .title {
   margin-bottom: 15px;
 }
-.add .title input{
+.add .title input {
   width: 500px;
   height: 30px;
-
 }
-.add .title h1{
+.add .title h1 {
   padding-bottom: 10px;
   padding-left: 30px;
 }
-.add .title h4{
+.add .title h4 {
   padding-bottom: 5px;
 }
-.add .label{
+.add .label {
   margin-bottom: 15px;
 }
-.add .label textarea{
+.add .label textarea {
   width: 500px;
   height: 80px;
   padding: 5px 10px;
 }
-.add .label h4{
+.add .label h4 {
   padding-bottom: 5px;
 }
 
-.add .imgAdd{
+.add .imgAdd {
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
 }
-.add .imgAdd h4{
+.add .imgAdd h4 {
   padding-bottom: 10px;
-
 }
-.add .imgAdd input.btn{
+.add .imgAdd input.btn {
   width: 100px;
   height: 25px;
   font-size: 10px;
@@ -294,54 +291,52 @@ body {
   background-color: #36855b;
 }
 
-.add .type{
+.add .type {
   margin-bottom: 15px;
 }
-.add .type h4{
+.add .type h4 {
   padding-bottom: 5px;
 }
-.add .type label{
+.add .type label {
   font-size: 15px;
 }
 .add .price {
   margin-bottom: 20px;
 }
-.add .price h4{
+.add .price h4 {
   padding-bottom: 5px;
 }
-.add .price input{
+.add .price input {
   height: 30px;
   width: 250px;
 }
-.add #ekle{
+.add #ekle {
   width: 100px;
   height: 25px;
-  font-size:10px;
+  font-size: 10px;
   margin-bottom: 60px;
 }
 
-
-.typeAdd{
+.typeAdd {
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
 }
-.typeAdd h4{
+.typeAdd h4 {
   padding-bottom: 5px;
 }
-.typeAdd input{
+.typeAdd input {
   width: 500px;
   height: 30px;
   margin-bottom: 15px;
   padding-left: 10px;
 }
-.typeAdd button{
+.typeAdd button {
   width: 150px;
   height: 25px;
-  font-size:10px;
+  font-size: 10px;
   background-color: #316aff;
 }
-
 
 @media screen and (max-width: 950px) {
   .footer .container-3 {
@@ -357,8 +352,8 @@ body {
   }
 }
 @media screen and (min-width: 700px) {
-  .footer{
-    position:fixed;
+  .footer {
+    position: fixed;
   }
 }
 @media screen and (max-width: 375px) {
@@ -437,5 +432,3 @@ body {
 .footer .container-3 .right .search a:hover {
   background: #316aff;
 }
-
-

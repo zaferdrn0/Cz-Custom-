@@ -1,138 +1,135 @@
 * {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-  }
-  body {
-    font-family: sans-serif;
-    background: linear-gradient(160deg, #5e85c9, #e3e7ee);
-    min-width: 100%;
-    height: 100vh;
-  }
-  .container .right input:focus-visible {
-    outline: none;
-  }
-  .btn {
-    display: inline-block;
-    height: 50px;
-    padding: 0 20px;
-    font-size: 12px;
-    color: #fff;
-    background-color: #316aff;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: 300ms;
-    cursor: pointer;
-  }
-  .btn:hover {
-    transform: scale(1.1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  font-family: sans-serif;
+  background: linear-gradient(160deg, #5e85c9, #e3e7ee);
+  min-width: 100%;
+  height: 100vh;
+}
+.container .right input:focus-visible {
+  outline: none;
+}
+.btn {
+  display: inline-block;
+  height: 50px;
+  padding: 0 20px;
+  font-size: 12px;
+  color: #fff;
+  background-color: #316aff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 300ms;
+  cursor: pointer;
+}
+.btn:hover {
+  transform: scale(1.1);
+}
+.container {
+  width: 1000px;
+  height: 535px;
+  display: flex;
+  background: linear-gradient(160deg, #f2f2f3, #182336);
+  position: relative;
+  margin: auto;
+  top: 20%;
+  border-radius: 8px;
+}
+.container .left {
+  border-radius: 8px;
+  background: linear-gradient(160deg, #e1e3e8, #1c2f4e);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+}
+.container .left img {
+  width: 400px;
+}
+
+.container .right {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  align-items: center;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container .right .input {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .right .header {
+  padding-bottom: 30px;
+  text-align: center;
+  padding-top: 60px;
+}
+.container .right .header img {
+  height: 50px;
+  padding-bottom: 35px;
+}
+
+.container .right .header h4 {
+  color: rgb(5, 5, 5);
+}
+
+.container .right .input input {
+  height: 28px;
+  margin-bottom: 6px;
+  width: 300px;
+  background: linear-gradient(160deg, #d8ddea, #578de3);
+  color: black;
+  padding-left: 10px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 0;
+}
+.container .right .input a.forgot {
+  text-align: right;
+  padding-top: 5px;
+  font-size: 17px;
+  color: #fff;
+}
+.container .right .input .button {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.container .right .input .button button {
+  margin-top: 22px;
+  width: 100px;
+  border-radius: 15px;
+  border: 0;
+}
+
+.container .right .create h6 {
+  color: white;
+  padding-top: 15px;
+  font-size: 11px;
+}
+
+/*Responsive*/
+@media screen and (max-width: 1025px) {
+  .container .left img {
+    width: 250px;
+    padding-top: 200px;
   }
   .container {
-    width: 1000px;
-    height: 535px;
-    display: flex;
-    background: linear-gradient(160deg, #f2f2f3, #182336);
-    position: relative;
-    margin: auto;
-    top: 20%;
-    border-radius: 8px;
+    width: 626px;
   }
+}
+@media screen and (max-width: 650px) {
   .container .left {
-    border-radius: 8px;
-    background: linear-gradient(160deg, #e1e3e8, #1c2f4e);
-    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+    display: none;
   }
-  .container .left img {
-    width: 400px;
-  }
-  
-  .container .right {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    align-items: center;
-    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
-  }
-  
-  .container .right .input {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .container .right .header {
-    padding-bottom: 30px;
-    text-align: center;
-    padding-top: 60px;
-  }
-  .container .right .header img {
-    height: 50px;
-    padding-bottom: 35px;
-  }
-  
-  .container .right .header h4 {
-    color: rgb(5, 5, 5);
-  }
-  
-  .container .right .input input {
-    height: 28px;
-    margin-bottom: 6px;
-    width: 300px;
-    background: linear-gradient(160deg, #d8ddea, #578de3);
-    color: black;
-    padding-left: 10px;
-    font-size: 15px;
-    border-radius: 6px;
-    border: 0;
-  }
-  .container .right .input a.forgot {
-    text-align: right;
-    padding-top: 5px;
-    font-size: 17px;
-    color: #fff;
-  }
-  .container .right .input .button {
-    text-align: center;
-    padding-bottom: 20px;
-  }
-  .container .right .input .button button {
-    margin-top: 22px;
-    width: 100px;
-    border-radius: 15px;
-    border: 0;
-  }
-  
-  .container .right .create h6 {
-    color: white;
-    padding-top: 15px;
-    font-size: 11px;
-  }
-  
-  
-  /*Responsive*/
-  @media screen and (max-width: 1025px) {
-    .container .left img {
-      width: 250px;
-      padding-top: 200px;
-      
-    }
-    .container {
-      width: 626px;
-  }
-  }
-  @media screen and (max-width: 650px) {
-    .container .left  {
-      display: none;
-    }
-    .container {
-      width: 100%;
-      height: 100vh;
-      top:0;
+  .container {
+    width: 100%;
+    height: 100vh;
+    top: 0;
   }
   .container .right {
     width: 100%;
     padding-top: 130px;
-   
   }
-  }
-  /*Responsive*/
+}
+/*Responsive*/
