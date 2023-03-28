@@ -115,7 +115,7 @@ fetch("/cart",{
   
     for(var i=0; i<data.length; i++) {
       console.log(data[i]);
-      dataId = data[i].id;
+     
 
       let mytr = document.createElement("tr");
       productList.appendChild(mytr)
@@ -157,29 +157,31 @@ fetch("/cart",{
 
       let myDeleteIcone = document.createElement("i")
       myDeleteIcone.className = "fa-solid fa-trash";
+      myDeleteIcone.id = `deleteIcone-${i}`;
      myDeleteIcone.style.cursor ="pointer"
-      myDeleteIcone.onclick = function() {
-        
-      var myListData = localStorage.getItem("cartItems");
-        
-
-      var myListArray = myListData.split(",");
-        console.log(dataId)
-
-      var index = myListArray.indexOf(dataId);
-
-      if(index >= 0) {
-          myListArray.splice(index, 1);
-           var updatedList = myListArray.join(",");
-           localStorage.setItem("cartItems", updatedList);
-            }
-          };
-      myDeleteTd.appendChild(myDeleteIcone)
-
+     myDeleteTd.appendChild(myDeleteIcone)
+     var deleteIcone = document.getElementById(`deleteIcone-${i}`)
+    deleteIcone.addEventListener("click", handleClick);
+    
+    
+   };
+      
+   function handleClick(event){
+    let buttonArr = [];
+    let buttonId = event.target.id;
+    buttonArr.push(buttonId.split("-"));
+    let productId = buttonArr[0][1];
+    let productIdd = data[productId].id;
+     
+    const dataa = JSON.parse(localStorage.getItem("cartItems"));
+    const idToRemove = productIdd;
+    const newData = dataa.filter(item => item.id !== idToRemove);
+    localStorage.setItem("cartItems", JSON.stringify(newData))
+   }
      
         
       
-    } 
+    
 
   })
   .catch((error) => {
